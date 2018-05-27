@@ -3,6 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// import Vant from 'Vant'
+// import 'vant/lib/vant-css/index.css'
+// Vue.use(Vant);
+//以上是全局引入
+//一下是使用babel-plugin-import  按需引入... 去babellrc看
+import {Button} from 'vant'
+
+Vue.use(Button)
+
+
+
 
 Vue.config.productionTip = false
 
