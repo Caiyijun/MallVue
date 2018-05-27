@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0",user-scalable=no>
     <title>mallvue</title>
   </head>
   <body>
@@ -12,6 +12,9 @@
       // iphone5 根字体大小16px; 320/20 = 16
       let htmlwidth = document.documentElement.clientWidth || document.body.clientWidth;
       let htmlDom = document.getElementsByTagName("html")[0];
+      if (htmlwidth>750) {
+        htmlwidth = 750
+      }
       htmlDom.style.fontSize = htmlwidth/20 + 'px';
     </script>
   </body>

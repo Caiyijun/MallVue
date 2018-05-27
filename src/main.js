@@ -8,9 +8,9 @@ import router from './router'
 // Vue.use(Vant);
 //以上是全局引入
 //一下是使用babel-plugin-import  按需引入... 去babellrc看
-import {Button} from 'vant'
+import {Button, Row, Col, Swipe, SwipeItem} from 'vant'
 
-Vue.use(Button)
+Vue.use(Button).use(Row).use(Col).use(Swipe).use(SwipeItem)
 
 
 
