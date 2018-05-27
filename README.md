@@ -29,4 +29,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
  # 第三节
 设置rem，项目中字体大小等使用rem。iphone5 根字体大小16px; 320 / 20  = 16px;
 
+# 第四节
+首页布局，通过按需加载引入需要用的组件，再通过use()使用。参考main.js第11行
+
 ```
