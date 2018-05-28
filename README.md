@@ -32,4 +32,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # 第四节
 首页布局，通过按需加载引入需要用的组件，再通过use()使用。参考main.js第11行
 
+# 第五节
+使用swipe组件制作首页轮播图，并设置最大高度以及lazy懒加载让图片加载好之后才开始使用效果。
+
+#第六节
+使用easy-mock 把图片信息转为接口。
+
 ```

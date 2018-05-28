@@ -21,10 +21,17 @@
                 </van-swipe-item>
             </van-swipe>
         </div>
+        <!-- type bar -->
+        <div class="type-bar">
+            <div >
+                <img v-lazy="" alt="">
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios'
     export default {
         data() {
             return {
@@ -37,6 +44,18 @@
                 ]
             }
         },
+        created(){
+            axios({
+                url:'https://www.easy-mock.com/mock/5ae2eeb23fbbf24d8cd7f0b6/SmileVue/index',
+                method: 'get',
+            })
+            .then(response => {
+                console.log(response)
+            })
+            .catch( error => {
+                console.log(error);
+            })
+        }
     }
 </script>
 
