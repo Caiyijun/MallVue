@@ -38,4 +38,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 #第六节
 使用easy-mock 把图片信息转为接口。
 
+#第七节
+使用flex布局type以及广告图
+
 ```
