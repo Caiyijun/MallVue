@@ -32,24 +32,48 @@
         <div>
             <img v-lazy="adbanner" alt="" width="100%">
         </div>
+        <!-- 商品推荐 -->
+        <div class="recommend-area">
+            <div class="recommend-title">
+                商品推荐
+            </div>
+            <div class="recommend-body">
+                <swiper :options = "swiperOption">
+                    <swiper-slide v-for="(item, index) in recommendGoods" :key="index">
+                        <div class="recommed-item">
+                            <img :src="item.image" width="80%" alt="">
+                            <div>{{ item.goodsName }}</div>
+                            <div>￥{{item.price}}(￥{{ item.mallPrice }})</div>
+                        </div>
+                    </swiper-slide>
+                </swiper>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
+import 'swiper/dist/css/swiper.css'
+import {swiper, swiperSlide} from 'vue-awesome-swiper'
     export default {
         data() {
             return {
+                swiperOption:{
+                    slidesPerView:3
+                },
                 msg: 'shopping mall',
                 locationIcon:require('../../assets/images/location.png'),
                 bannerPicArray:[],
                 category:[],
                 adbanner:'',
+                recommendGoods:[]
             }
         },
+        components:{swiper, swiperSlide},
         created(){
             axios({
-                url:'https://www.easy-mock.com/mock/5ae2eeb23fbbf24d8cd7f0b6/SmileVue/index',
+                url:'https://www.easy-mock.com/mock/5b0ac5f674fb41736d01d204/mallvue/index',
                 method: 'get',
             })
             .then(response => {
@@ -57,7 +81,8 @@ import axios from 'axios'
                 if( response.status == 200 ){
                     this.category = response.data.data.category;
                     this.adbanner = response.data.data.advertesPicture.PICTURE_ADDRESS;
-                    this.bannerPicArray = response.data.data.slides
+                    this.bannerPicArray = response.data.data.slides;
+                    this.recommendGoods = response.data.data.recommend
                 }
             })
             .catch( error => {
@@ -109,6 +134,25 @@ import axios from 'axios'
 }
 .type-bar div{
     padding: .3rem;
+    font-size: 12px;
+    text-align: center;
+}
+.recommend-area{
+    background-color: #fff;
+    margin-top: 0.3rem;
+}
+.recommend-title{
+    border-bottom:1px solid #eee;
+    font-size: 14px;
+    padding: 0.2rem;
+    color: #e5017d;
+}
+.recommend-body{
+    border-bottom: 1xp solid #eee;
+}
+.recommend-item{
+    width: 99%;
+    border-right:1px solid #eee;
     font-size: 12px;
     text-align: center;
 }
