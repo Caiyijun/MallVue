@@ -49,10 +49,30 @@
                 </swiper>
             </div>
         </div>
-      <swiperDefault></swiperDefault>
-      <swiperDefault2></swiperDefault2>
-      <swiperDefault3></swiperDefault3>
-      <swiperText></swiperText>
+      <div class="floor">
+        <div class="floor-anomaly">
+          <div class="floor-one">
+            <img :src="floor1_0.image" width="100%" />
+          </div>
+          <div>
+            <div class="floor-two">
+              <img :src="floor1_1.image" width="100%" />
+            </div>
+            <div class="floor-two">
+              <img :src="floor1_2.image" width="100%" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="floor-rule">
+        <div v-for="(item, index) in floor1.slice(3)" :key="index">
+          <img :src="item.image" width="100%"/>
+        </div>
+      </div>
+      <!--<swiperDefault></swiperDefault>-->
+      <!--<swiperDefault2></swiperDefault2>-->
+      <!--<swiperDefault3></swiperDefault3>-->
+      <!--<swiperText></swiperText>-->
     </div>
 </template>
 
@@ -75,7 +95,12 @@ import swiperText from '../swiper/swiperText'
                 bannerPicArray:[],
                 category:[],
                 adbanner:'',
-                recommendGoods:[]
+                recommendGoods:[],
+              floor1:[],
+              floor1_0:{},
+              floor1_1:{},
+              floor1_2:{},
+
             }
         },
         components:{swiper, swiperSlide,swiperDefault,swiperDefault2,swiperDefault3,swiperText},
@@ -90,7 +115,11 @@ import swiperText from '../swiper/swiperText'
                     this.category = response.data.data.category;
                     this.adbanner = response.data.data.advertesPicture.PICTURE_ADDRESS;
                     this.bannerPicArray = response.data.data.slides;
-                    this.recommendGoods = response.data.data.recommend
+                    this.recommendGoods = response.data.data.recommend;
+                    this.floor1 = response.data.data.floor1;
+                    this.floor1_0 = this.floor1[0];
+                    this.floor1_1 = this.floor1[1];
+                    this.floor1_2 = this.floor1[2];
                 }
             })
             .catch( error => {
@@ -156,7 +185,7 @@ import swiperText from '../swiper/swiperText'
     color: #e5017d;
 }
 .recommend-body{
-    border-bottom: 1xp solid #eee;
+    border-bottom: 1px solid #eee;
 }
 .recommend-item{
     width: 99%;
@@ -164,4 +193,36 @@ import swiperText from '../swiper/swiperText'
     font-size: 12px;
     text-align: center;
 }
+  .floor-anomaly{
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-bottom:1px solid #ddd;
+  }
+  .floor-anomaly div{
+    width: 10rem;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  .floor-one{
+    border-right: 1px solid #ddd;
+  }
+.floor-two{
+  border-bottom: 1px solid #ddd;
+}
+  .floor-rule{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #fff;
+  }
+  .floor-rule div{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 10rem;
+    border-bottom: 1px solid #ddd;
+  }
+  .floor-rule div:nth-child(odd){
+    border-right: 1px solid #ddd;
+  }
 </style>

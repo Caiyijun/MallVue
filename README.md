@@ -48,4 +48,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 #第十二节
 使用vue-awesome-swiper组件制作 设置无限轮播以及多个滚动。
 
+#第十三节
+制作楼层效果 并使用flex布局
+
 ```
