@@ -52,6 +52,7 @@
       <swiperDefault></swiperDefault>
       <swiperDefault2></swiperDefault2>
       <swiperDefault3></swiperDefault3>
+      <swiperText></swiperText>
     </div>
 </template>
 
@@ -62,6 +63,7 @@ import {swiper, swiperSlide} from 'vue-awesome-swiper'
 import swiperDefault from '../swiper/swiperDefault'
 import swiperDefault2 from '../swiper/swiperDefault2'
 import swiperDefault3 from '../swiper/swiperDefault3'
+import swiperText from '../swiper/swiperText'
     export default {
         data() {
             return {
@@ -76,7 +78,7 @@ import swiperDefault3 from '../swiper/swiperDefault3'
                 recommendGoods:[]
             }
         },
-        components:{swiper, swiperSlide,swiperDefault,swiperDefault2,swiperDefault3},
+        components:{swiper, swiperSlide,swiperDefault,swiperDefault2,swiperDefault3,swiperText},
         created(){
             axios({
                 url:'https://www.easy-mock.com/mock/5b0ac5f674fb41736d01d204/mallvue/index',

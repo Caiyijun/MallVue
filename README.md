@@ -45,4 +45,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 #第十一节
 使用vue-awesome-swiper组件制作 横屏  竖屏轮播。
 
+#第十二节
+使用vue-awesome-swiper组件制作 设置无限轮播以及多个滚动。
+
 ```
