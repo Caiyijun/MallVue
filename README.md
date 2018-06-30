@@ -41,4 +41,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 #第七节
 使用flex布局type以及广告图
 
+
+#第十一节
+使用vue-awesome-swiper组件制作 横屏  竖屏轮播。
+
 ```
