@@ -51,4 +51,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 #第十三节
 制作楼层效果 并使用flex布局
 
+#第十四节
+楼层组件封装和watch使用技巧让数据加载的时候不会空  ---  父子传值
+
 ```
