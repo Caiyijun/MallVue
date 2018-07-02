@@ -57,4 +57,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 #第十五节
 服务接口API配置文件制作  src/serviceAPI.config.js 中配置商城通用接口api
 
+#16节课
+安装koa到项目中
+
 ```
