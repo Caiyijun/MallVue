@@ -60,4 +60,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 #16节课
 安装koa到项目中
 
+#第17节
+Koa用Mongoose连接数据库（1）
+
 ```
